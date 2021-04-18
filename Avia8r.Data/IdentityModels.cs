@@ -33,6 +33,8 @@ namespace Avia8r.Data
         }
 
         public DbSet<Aircraft> Aircraft { get; set; }
+        public DbSet<FlightLeg> FlightLegs { get; set; }
+        public DbSet<MxEvent> MaintenanceEvent { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
