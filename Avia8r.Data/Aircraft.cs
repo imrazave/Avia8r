@@ -10,7 +10,7 @@ namespace Avia8r.Data
     public class Aircraft
     {
         [Key]
-        public Guid AcTail { get; set; }
+        public string AcTail { get; set; }
         [Required]
         public string Model { get; set; }
         [Required]

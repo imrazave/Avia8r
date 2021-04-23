@@ -8,22 +8,26 @@ using System.Threading.Tasks;
 
 namespace Avia8r.Data
 {
-    public class FlightLeg
+    public enum TypeOfMx
+    {
+        light = 1,
+        medium,
+        heavy
+    }
+    public class MxEvent
     {
         [Key]
-        public int TripId { get; set; }
-        [Required]
-        public string OriginAirport { get; set; }
-        [Required]
-        public string DestinationAirport { get; set; }
-        [Required]
-        public DateTime DepartureDate { get; set; }
-        
+        public int MxId { get; set; }
         [ForeignKey(nameof(Aircraft))]
         public string AcTail { get; set; }
         public virtual Aircraft Aircraft { get; set; }
-
         [Required]
-        public DateTime ArrivalDate { get; set; }
+        public TypeOfMx TypeOfMx { get; set; }
+        [Required]
+        public String MxDescription { get; set; }
+        [Required]
+        public int ManHours { get; set; }
+        [Required]
+        public double Cost { get; set; }
     }
 }
