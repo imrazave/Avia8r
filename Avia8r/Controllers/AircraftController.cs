@@ -1,4 +1,5 @@
 ﻿using Avia8r.Models;
+using Avia8r.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,20 +11,33 @@ namespace Avia8r.Controllers
     [Authorize]
     public class AircraftController : Controller
     {
+        private AircraftService _service = new AircraftService();
         // GET: Aircraft
         public ActionResult Index()
         {
-            var model = new AircraftListItem[0];
+            //var model = new AircraftListItem[0];
+            //var userId = Guid.Parse(User.Identity.GetUserId());
+            //var service = new AircraftService(userId);
+            var model = _service.GetAircraft();
             return View(model);
         }
-        //GET
-        public ActionResult Create(AircraftCreate Model)
+        public ActionResult Create()
         {
-            if (ModelState.IsValid)
-            {
-
-            }
             return View();
+        }
+
+        //GET
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(AircraftCreate model)
+        {
+            if (!ModelState.IsValid)
+
+            return View(model);
+
+            _service.CreateAircraft(model);
+
+            return RedirectToAction("Index");
         }
     }
 }

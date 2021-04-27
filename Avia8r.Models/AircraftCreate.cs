@@ -11,7 +11,7 @@ namespace Avia8r.Models
         [Required]
         public string AcTail { get; set; }
         [Required]
-        public string Model { get; set; }
+        public string AcModel { get; set; }
         [Required]
         public string Manufacturer { get; set; }
         [Required]

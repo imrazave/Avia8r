@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AircraftService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Avia8r.Data\Avia8r.Data.csproj">
+      <Project>{d74da232-75f3-44ec-87d9-470c8b428965}</Project>
+      <Name>Avia8r.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Avia8r.Models\Avia8r.Models.csproj">
+      <Project>{19558a8f-7bb5-4898-9714-d948638ee0b9}</Project>
+      <Name>Avia8r.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
