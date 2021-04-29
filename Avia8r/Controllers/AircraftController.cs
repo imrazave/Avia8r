@@ -31,13 +31,17 @@ namespace Avia8r.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(AircraftCreate model)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) return View(model);
+
+            if (_service.CreateAircraft(model))
+            {
+                TempData["SaveResult"] = "Your aircraft was created.";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Aircraft could not be created");
 
             return View(model);
-
-            _service.CreateAircraft(model);
-
-            return RedirectToAction("Index");
         }
     }
 }
