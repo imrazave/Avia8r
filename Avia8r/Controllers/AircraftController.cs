@@ -43,5 +43,13 @@ namespace Avia8r.Controllers
 
             return View(model);
         }
+
+        public ActionResult Details(string AcTail)
+        {
+            var svc = CreateAircraftService();
+            var model = svc.GetNoteById(AcTail);
+
+            return View(model);
+        }
     }
 }

@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AircraftCreate.cs" />
+    <Compile Include="AircraftDetail.cs" />
     <Compile Include="AircraftListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

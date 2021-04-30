@@ -56,5 +56,24 @@ namespace Avia8r.Services
                 return query.ToArray();
             }
         }
+
+        public AircraftDetail GetAircraftById(string AcTail)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Aircraft
+                    .Single(e => e.AcTail == AcTail);
+                return
+                    new AircraftDetail
+                    {
+                        AcTail = entity.AcTail,
+                        AcModel = entity.Model,
+                        Manufacturer = entity.Manufacturer,
+                        Airline = entity.Airline
+                    };
+            }
+        }
     }
 }
