@@ -22,7 +22,7 @@ namespace Avia8r.Services
                 new Aircraft()
                 {
                     AcTail = model.AcTail,
-                    Model = model.AcModel,
+                    AcModel = model.AcModel,
                     Manufacturer = model.Manufacturer,
                     Airline = model.Airline
                 };
@@ -47,7 +47,7 @@ namespace Avia8r.Services
                         new AircraftListItem
                         {
                             AcTail = e.AcTail,
-                            Model = e.Model,
+                            Model = e.AcModel,
                             Manufacturer = e.Manufacturer,
                             Airline = e.Airline
 
@@ -69,10 +69,28 @@ namespace Avia8r.Services
                     new AircraftDetail
                     {
                         AcTail = entity.AcTail,
-                        AcModel = entity.Model,
+                        AcModel = entity.AcModel,
                         Manufacturer = entity.Manufacturer,
                         Airline = entity.Airline
-                    }
+                    };
+            }
+        }
+
+        public bool UpdateAircraft(AircraftEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Aircraft
+                    .Single(e => e.AcTail == model.AcTail);
+
+                entity.AcTail = model.AcTail;
+                entity.AcModel = model.AcModel;
+                entity.Manufacturer = model.Manufacturer;
+                entity.Airline = model.Airline;
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }

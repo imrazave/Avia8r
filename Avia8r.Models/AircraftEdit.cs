@@ -1,21 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Avia8r.Data
+namespace Avia8r.Models
 {
-    public class Aircraft
+    public class AircraftEdit
     {
-        [Key]
         public string AcTail { get; set; }
-        [Required]
-        public string AcModel { get; set; }
-        [Required]
-        public string Manufacturer { get; set; }
-        [Required]
         public string Airline { get; set; }
+        public string AcModel { get; set; }
+        public string Manufacturer { get; set; }
     }
 }

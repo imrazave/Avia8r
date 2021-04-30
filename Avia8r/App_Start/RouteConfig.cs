@@ -18,6 +18,12 @@ namespace Avia8r
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+         //   //routes.MapRoute(
+         //   // name: "Details",
+         //   // url: "{controller}/{action}/{AcTail}",
+         //   // defaults: new { controller = "Home", action = "Index", AcTail = UrlParameter.Optional }
+         //);
         }
     }
 }

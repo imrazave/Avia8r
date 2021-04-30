@@ -44,11 +44,26 @@ namespace Avia8r.Controllers
             return View(model);
         }
 
-        public ActionResult Details(string AcTail)
+        public ActionResult Details(string id)
         {
             var svc = _service;
-            var model = svc.GetAircraftById(AcTail);
+            var model = svc.GetAircraftById(id);
 
+            return View(model);
+        }
+
+        public ActionResult Edit(string id)
+        {
+            var svc = _service;
+            var detail = svc.GetAircraftById(id);
+            var model =
+                new AircraftEdit
+                {
+                    AcTail = detail.AcTail,
+                    AcModel = detail.AcModel,
+                    Manufacturer = detail.Manufacturer,
+                    Airline = detail.Airline,
+                };
             return View(model);
         }
     }
