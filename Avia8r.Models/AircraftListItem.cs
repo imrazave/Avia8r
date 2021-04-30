@@ -9,7 +9,7 @@ namespace Avia8r.Models
     public class AircraftListItem
     {
         public string AcTail { get; set; }
-        public string Model { get; set; }
+        public string AcModel { get; set; }
         public string Manufacturer { get; set; }
         public string Airline { get; set; }
     }
