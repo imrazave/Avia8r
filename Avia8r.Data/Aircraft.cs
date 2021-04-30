@@ -12,7 +12,7 @@ namespace Avia8r.Data
         [Key]
         public string AcTail { get; set; }
         [Required]
-        public string AcModel { get; set; }
+        public string Model { get; set; }
         [Required]
         public string Manufacturer { get; set; }
         [Required]

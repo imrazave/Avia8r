@@ -240,6 +240,7 @@
     <Content Include="Views\Aircraft\Index.cshtml" />
     <Content Include="Views\Aircraft\Create.cshtml" />
     <Content Include="Views\Aircraft\Details.cshtml" />
+    <Content Include="Views\Aircraft\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

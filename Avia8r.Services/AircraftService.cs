@@ -22,7 +22,7 @@ namespace Avia8r.Services
                 new Aircraft()
                 {
                     AcTail = model.AcTail,
-                    AcModel = model.AcModel,
+                    Model = model.AcModel,
                     Manufacturer = model.Manufacturer,
                     Airline = model.Airline
                 };
@@ -47,7 +47,7 @@ namespace Avia8r.Services
                         new AircraftListItem
                         {
                             AcTail = e.AcTail,
-                            Model = e.AcModel,
+                            Model = e.Model,
                             Manufacturer = e.Manufacturer,
                             Airline = e.Airline
 
@@ -69,7 +69,7 @@ namespace Avia8r.Services
                     new AircraftDetail
                     {
                         AcTail = entity.AcTail,
-                        AcModel = entity.AcModel,
+                        AcModel = entity.Model,
                         Manufacturer = entity.Manufacturer,
                         Airline = entity.Airline
                     };
@@ -86,7 +86,7 @@ namespace Avia8r.Services
                     .Single(e => e.AcTail == model.AcTail);
 
                 entity.AcTail = model.AcTail;
-                entity.AcModel = model.AcModel;
+                entity.Model = model.AcModel;
                 entity.Manufacturer = model.Manufacturer;
                 entity.Airline = model.Airline;
 

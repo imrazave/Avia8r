@@ -66,5 +66,28 @@ namespace Avia8r.Controllers
                 };
             return View(model);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(string id, AircraftEdit model)
+        {
+            if(!ModelState.IsValid) return View(model);
+
+            if(model.AcTail != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var svc = _service;
+            if (svc.UpdateAircraft(model))
+            {
+                TempData["SaveResult"] = "Your aircraft was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your aircraft could not be updated.");
+            return View(model);
+        }
     }
 }
