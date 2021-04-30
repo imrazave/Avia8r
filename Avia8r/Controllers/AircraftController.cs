@@ -46,8 +46,8 @@ namespace Avia8r.Controllers
 
         public ActionResult Details(string AcTail)
         {
-            var svc = CreateAircraftService();
-            var model = svc.GetNoteById(AcTail);
+            var svc = _service;
+            var model = svc.GetAircraftById(AcTail);
 
             return View(model);
         }

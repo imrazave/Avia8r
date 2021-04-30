@@ -72,7 +72,7 @@ namespace Avia8r.Services
                         AcModel = entity.Model,
                         Manufacturer = entity.Manufacturer,
                         Airline = entity.Airline
-                    };
+                    }
             }
         }
     }
