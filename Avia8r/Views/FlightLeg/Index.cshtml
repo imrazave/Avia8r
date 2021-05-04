@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Avia8r.Models.FlightLegListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TripId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OriginAirport)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DestinationAirport)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartureDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AcTail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArrivalDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TripId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OriginAirport)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DestinationAirport)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartureDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AcTail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArrivalDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
