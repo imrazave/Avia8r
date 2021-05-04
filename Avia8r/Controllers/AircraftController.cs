@@ -89,5 +89,27 @@ namespace Avia8r.Controllers
             ModelState.AddModelError("", "Your aircraft could not be updated.");
             return View(model);
         }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(string id)
+        {
+            var svc = _service;
+            var model = svc.GetAircraftById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteAircraft(string id)
+        {
+            var svc = _service;
+            svc.DeleteAC(id);
+
+            TempData["SaveResult"] = "Your aircraft was deleted";
+
+            return RedirectToAction ("Index");
+        }
     }
 }

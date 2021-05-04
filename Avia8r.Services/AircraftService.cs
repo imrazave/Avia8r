@@ -93,5 +93,20 @@ namespace Avia8r.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteAC(string AcTail)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Aircraft
+                    .Single(e => e.AcTail == AcTail);
+
+                ctx.Aircraft.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
