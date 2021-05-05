@@ -29,6 +29,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Cost)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeOfMx)
+        </th>
         <th></th>
     </tr>
 
@@ -53,9 +56,12 @@
             @Html.DisplayFor(modelItem => item.Cost)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.DisplayFor(modelItem => item.TypeOfMx)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MxId}) |
+            @Html.ActionLink("Details", "Details", new { id = item.MxId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.MxId })
         </td>
     </tr>
 }

@@ -1,0 +1,66 @@
+﻿@model Avia8r.Models.FlightLegDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FlightLegDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TripId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TripId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OriginAirport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OriginAirport)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DestinationAirport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DestinationAirport)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartureDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartureDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AcTail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AcTail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrivalDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrivalDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TripId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

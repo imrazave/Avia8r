@@ -15,7 +15,7 @@ namespace Avia8r.Controllers
         // GET: FlightLeg
         public ActionResult Index()
         {
-            var model = new MxEventListItem[0];
+            var model = _service.GetMxEvent();
             return View(model);
         }
 

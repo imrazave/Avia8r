@@ -250,6 +250,10 @@
     <Content Include="Views\MxEvent\Create.cshtml" />
     <Content Include="Views\MxEvent\Details.cshtml" />
     <Content Include="Views\MxEvent\Edit.cshtml" />
+    <Content Include="Views\MxEvent\Delete.cshtml" />
+    <Content Include="Views\FlightLeg\Details.cshtml" />
+    <Content Include="Views\FlightLeg\Edit.cshtml" />
+    <Content Include="Views\FlightLeg\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
