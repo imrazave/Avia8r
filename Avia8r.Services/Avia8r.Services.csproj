@@ -54,6 +54,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FlightLegService.cs" />
+    <Compile Include="MxEventService.cs" />
     <Compile Include="AircraftService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

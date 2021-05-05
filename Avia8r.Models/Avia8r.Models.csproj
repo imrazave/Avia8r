@@ -54,6 +54,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MxEventCreate.cs" />
+    <Compile Include="FlightLegCreate.cs" />
     <Compile Include="AircraftCreate.cs" />
     <Compile Include="AircraftDetail.cs" />
     <Compile Include="AircraftEdit.cs" />

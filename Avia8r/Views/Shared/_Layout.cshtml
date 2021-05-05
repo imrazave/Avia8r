@@ -25,6 +25,8 @@
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("Aircraft", "Index", "Aircraft")</li>
+                        <li>@Html.ActionLink("MxEvent", "Index", "MxEvent")</li>
+                        <li>@Html.ActionLink("FlightLeg", "Index", "FlightLeg")</li>
                     }
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>

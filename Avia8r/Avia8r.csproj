@@ -246,6 +246,8 @@
     <Content Include="Views\Aircraft\Delete.cshtml" />
     <Content Include="Views\FlightLeg\Index.cshtml" />
     <Content Include="Views\MxEvent\Index.cshtml" />
+    <Content Include="Views\FlightLeg\Create.cshtml" />
+    <Content Include="Views\MxEvent\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
