@@ -84,6 +84,10 @@
     <Compile Include="Migrations\202104302118403_AcModel2.designer.cs">
       <DependentUpon>202104302118403_AcModel2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105051235491_MxEventAndFlightLegUpdate.cs" />
+    <Compile Include="Migrations\202105051235491_MxEventAndFlightLegUpdate.designer.cs">
+      <DependentUpon>202105051235491_MxEventAndFlightLegUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MxEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -110,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104302118403_AcModel2.resx">
       <DependentUpon>202104302118403_AcModel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105051235491_MxEventAndFlightLegUpdate.resx">
+      <DependentUpon>202105051235491_MxEventAndFlightLegUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

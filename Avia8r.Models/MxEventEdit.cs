@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Avia8r.Models
 {
-    public class MxEventListItem
+    public class MxEventEdit
     {
         public int MxId { get; set; }
         public string AcTail { get; set; }
@@ -15,6 +15,6 @@ namespace Avia8r.Models
         public string MxDescription { get; set; }
         public int ManHours { get; set; }
         public int HoursOutOfService { get; set; }
-        public Double Cost { get; set; }
+        public double Cost { get; set; }
     }
 }

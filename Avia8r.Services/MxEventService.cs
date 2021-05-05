@@ -10,100 +10,106 @@ namespace Avia8r.Services
 {
     public class MxEventService
     {
-        //private readonly Guid _userId;
-        //public AircraftService(Guid userId)
-        //{
-        //    _userId = userId;
-        //}
 
-        public bool CreateAircraft(AircraftCreate model)
+        public bool CreateMxEvent(MxEventCreate model)
         {
             var entity =
-                new Aircraft()
+                new MxEvent()
                 {
+                    MxId = model.MxId,
                     AcTail = model.AcTail,
-                    AcModel = model.AcModel,
-                    Manufacturer = model.Manufacturer,
-                    Airline = model.Airline
+                    TypeOfMx = model.TypeOfMx,
+                    MxDescription = model.MxDescription,
+                    ManHours = model.ManHours,
+                    HoursOutOfService = model.HoursOutOfService,
+                    Cost = model.Cost
                 };
 
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Aircraft.Add(entity);
+                ctx.MaintenanceEvent.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
 
-        public IEnumerable<AircraftListItem> GetAircraft()
+        public IEnumerable<MxEventListItem> GetMxEvent()
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
-                    .Aircraft
-                    .Where(e => e.AcTail != null)
+                    .MaintenanceEvent
+                    .Where(e => e.MxId != null)
                     .Select(
                         e =>
-                        new AircraftListItem
+                        new MxEventListItem
                         {
+                            MxId = e.MxId,
                             AcTail = e.AcTail,
-                            AcModel = e.AcModel,
-                            Manufacturer = e.Manufacturer,
-                            Airline = e.Airline
-
+                            TypeOfMx = e.TypeOfMx,
+                            MxDescription = e.MxDescription,
+                            ManHours = e.ManHours,
+                            HoursOutOfService = e.HoursOutOfService,
+                            Cost = e.Cost
                         }
                         );
                 return query.ToArray();
             }
         }
 
-        public AircraftDetail GetAircraftById(string AcTail)
+        public MxEventDetail GetMxEventById(int MxId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                    .Aircraft
-                    .Single(e => e.AcTail == AcTail);
+                    .MaintenanceEvent
+                    .Single(e => e.MxId == MxId);
                 return
-                    new AircraftDetail
+                    new MxEventDetail
                     {
+                        MxId = entity.MxId,
                         AcTail = entity.AcTail,
-                        AcModel = entity.AcModel,
-                        Manufacturer = entity.Manufacturer,
-                        Airline = entity.Airline
+                        TypeOfMx = entity.TypeOfMx,
+                        MxDescription = entity.MxDescription,
+                        ManHours = entity.ManHours,
+                        HoursOutOfService = entity.HoursOutOfService,
+                        Cost = entity.Cost
                     };
             }
         }
 
-        public bool UpdateAircraft(AircraftEdit model)
+        public bool UpdateMxEvent(MxEventEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                    .Aircraft
-                    .Single(e => e.AcTail == model.AcTail);
+                    .MaintenanceEvent
+                    .Single(e => e.MxId == model.MxId);
 
+                entity.MxId = model.MxId;
                 entity.AcTail = model.AcTail;
-                entity.AcModel = model.AcModel;
-                entity.Manufacturer = model.Manufacturer;
-                entity.Airline = model.Airline;
+                entity.TypeOfMx = model.TypeOfMx;
+                entity.MxDescription = model.MxDescription;
+                entity.ManHours = model.ManHours;
+                entity.HoursOutOfService = model.HoursOutOfService;
+                entity.Cost = model.Cost;
 
                 return ctx.SaveChanges() == 1;
             }
         }
 
-        public bool DeleteAC(string AcTail)
+        public bool DeleteMx(int MxId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                    .Aircraft
-                    .Single(e => e.AcTail == AcTail);
+                    .MaintenanceEvent
+                    .Single(e => e.MxId == MxId);
 
-                ctx.Aircraft.Remove(entity);
+                ctx.MaintenanceEvent.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }

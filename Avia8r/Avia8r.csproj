@@ -248,6 +248,8 @@
     <Content Include="Views\MxEvent\Index.cshtml" />
     <Content Include="Views\FlightLeg\Create.cshtml" />
     <Content Include="Views\MxEvent\Create.cshtml" />
+    <Content Include="Views\MxEvent\Details.cshtml" />
+    <Content Include="Views\MxEvent\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

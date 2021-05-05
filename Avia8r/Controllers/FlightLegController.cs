@@ -1,4 +1,5 @@
 ﻿using Avia8r.Models;
+using Avia8r.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,17 +39,17 @@ namespace Avia8r.Controllers
 
             return View(model);
         }
-        public ActionResult Details(string id)
+        public ActionResult Details(int id)
         {
             var svc = _service;
-            var model = svc.GetFlightLegByTripId(id);
+            var model = svc.GetFlightLegById(id);
 
             return View(model);
         }
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int id)
         {
             var svc = _service;
-            var detail = svc.GetFlightLegByTripId(id);
+            var detail = svc.GetFlightLegById(id);
             var model =
                 new FlightLegEdit
                 {
@@ -63,7 +64,7 @@ namespace Avia8r.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(string id, FlightLegEdit model)
+        public ActionResult Edit(int id, FlightLegEdit model)
         {
             if (!ModelState.IsValid) return View(model);
 
@@ -85,7 +86,7 @@ namespace Avia8r.Controllers
         }
 
         [ActionName("Delete")]
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int id)
         {
             var svc = _service;
             var model = svc.GetFlightLegById(id);
@@ -96,7 +97,7 @@ namespace Avia8r.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteFlightLeg(string id)
+        public ActionResult DeleteFlightLeg(int id)
         {
             var svc = _service;
             svc.DeleteFL(id);

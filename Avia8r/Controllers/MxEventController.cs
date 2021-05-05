@@ -1,4 +1,5 @@
 ﻿using Avia8r.Models;
+using Avia8r.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,10 +8,10 @@ using System.Web.Mvc;
 
 namespace Avia8r.Controllers
 {
-    private MxEventService _service = new MxEventService();
+    [Authorize]
     public class MxEventController : Controller
     {
-        [Authorize]
+        private MxEventService _service = new MxEventService();
         // GET: FlightLeg
         public ActionResult Index()
         {
@@ -40,17 +41,17 @@ namespace Avia8r.Controllers
 
             return View(model);
         }
-        public ActionResult Details(string id)
+        public ActionResult Details(int id)
         {
             var svc = _service;
-            var model = svc.GetMxEventByMxId(id);
+            var model = svc.GetMxEventById(id);
 
             return View(model);
         }
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int id)
         {
             var svc = _service;
-            var detail = svc.GetMxEventByMxId(id);
+            var detail = svc.GetMxEventById(id);
             var model =
                 new MxEventEdit
                 {
@@ -66,11 +67,11 @@ namespace Avia8r.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(string id, MxEventEdit model)
+        public ActionResult Edit(int id, MxEventEdit model)
         {
             if (!ModelState.IsValid) return View(model);
 
-            if (model.TripId != id)
+            if (model.MxId != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
@@ -88,7 +89,7 @@ namespace Avia8r.Controllers
         }
 
         [ActionName("Delete")]
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int id)
         {
             var svc = _service;
             var model = svc.GetMxEventById(id);
@@ -99,10 +100,10 @@ namespace Avia8r.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteMxEvent(string id)
+        public ActionResult DeleteMxEvent(int id)
         {
             var svc = _service;
-            svc.DeleteMX(id);
+            svc.DeleteMx(id);
 
             TempData["SaveResult"] = "Your maintenance event was deleted";
 

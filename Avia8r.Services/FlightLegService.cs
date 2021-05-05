@@ -10,11 +10,6 @@ namespace Avia8r.Services
 {
     public class FlightLegService
     {
-        //private readonly Guid _userId;
-        //public AircraftService(Guid userId)
-        //{
-        //    _userId = userId;
-        //}
 
         public bool CreateFlightLeg(FlightLegCreate model)
         {
@@ -36,7 +31,7 @@ namespace Avia8r.Services
             }
         }
 
-        public IEnumerable<AircraftListItem> GetFlightLeg()
+        public IEnumerable<FlightLegListItem> GetFlightLeg()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -101,7 +96,7 @@ namespace Avia8r.Services
             }
         }
 
-        public bool DeleteFlightLeg(int TripId)
+        public bool DeleteFL(int TripId)
         {
             using (var ctx = new ApplicationDbContext())
             {

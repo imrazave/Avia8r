@@ -10,11 +10,6 @@ namespace Avia8r.Services
 {
     public class AircraftService
     {
-        //private readonly Guid _userId;
-        //public AircraftService(Guid userId)
-        //{
-        //    _userId = userId;
-        //}
 
         public bool CreateAircraft(AircraftCreate model)
         {

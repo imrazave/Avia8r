@@ -28,6 +28,7 @@ namespace Avia8r.Data
         [Required]
         public int ManHours { get; set; }
         [Required]
+        public int HoursOutOfService { get; set; }
         public double Cost { get; set; }
     }
 }

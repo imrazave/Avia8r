@@ -54,6 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MxEventEdit.cs" />
+    <Compile Include="FlightLegEdit.cs" />
+    <Compile Include="MxEventDetail.cs" />
+    <Compile Include="FlightLegDetail.cs" />
     <Compile Include="MxEventCreate.cs" />
     <Compile Include="FlightLegCreate.cs" />
     <Compile Include="AircraftCreate.cs" />
