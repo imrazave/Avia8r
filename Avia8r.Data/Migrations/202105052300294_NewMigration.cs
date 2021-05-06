@@ -1,9 +1,9 @@
-namespace Avia8r.Data.Migrations
+﻿namespace Avia8r.Data.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class migratingAvia8r : DbMigration
+    public partial class NewMigration : DbMigration
     {
         public override void Up()
         {
@@ -11,8 +11,8 @@ namespace Avia8r.Data.Migrations
                 "dbo.Aircraft",
                 c => new
                     {
-                        AcTail = c.Guid(nullable: false),
-                        Model = c.String(nullable: false),
+                        AcTail = c.String(nullable: false, maxLength: 128),
+                        AcModel = c.String(nullable: false),
                         Manufacturer = c.String(nullable: false),
                         Airline = c.String(nullable: false),
                     })
@@ -26,11 +26,11 @@ namespace Avia8r.Data.Migrations
                         OriginAirport = c.String(nullable: false),
                         DestinationAirport = c.String(nullable: false),
                         DepartureDate = c.DateTime(nullable: false),
-                        AcTail = c.Guid(nullable: false),
+                        AcTail = c.String(maxLength: 128),
                         ArrivalDate = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.TripId)
-                .ForeignKey("dbo.Aircraft", t => t.AcTail, cascadeDelete: true)
+                .ForeignKey("dbo.Aircraft", t => t.AcTail)
                 .Index(t => t.AcTail);
             
             CreateTable(
@@ -38,14 +38,15 @@ namespace Avia8r.Data.Migrations
                 c => new
                     {
                         MxId = c.Int(nullable: false, identity: true),
-                        AcTail = c.Guid(nullable: false),
+                        AcTail = c.String(maxLength: 128),
                         TypeOfMx = c.Int(nullable: false),
                         MxDescription = c.String(nullable: false),
                         ManHours = c.Int(nullable: false),
+                        HoursOutOfService = c.Int(nullable: false),
                         Cost = c.Double(nullable: false),
                     })
                 .PrimaryKey(t => t.MxId)
-                .ForeignKey("dbo.Aircraft", t => t.AcTail, cascadeDelete: true)
+                .ForeignKey("dbo.Aircraft", t => t.AcTail)
                 .Index(t => t.AcTail);
             
             CreateTable(

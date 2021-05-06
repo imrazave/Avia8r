@@ -15,9 +15,7 @@ namespace Avia8r.Controllers
         // GET: Aircraft
         public ActionResult Index()
         {
-            //var model = new AircraftListItem[0];
-            //var userId = Guid.Parse(User.Identity.GetUserId());
-            //var service = new AircraftService(userId);
+
             var model = _service.GetAircraft();
             return View(model);
         }

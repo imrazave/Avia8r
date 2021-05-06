@@ -1,0 +1,25 @@
+﻿body {
+    background-color: darkseagreen;
+}
+
+h1{
+    font-size: 20px; 
+    font-family: 'Californian FB', 'Arial', Arial, sans-serif;
+}
+
+.landingPage{
+    background-color: aqua;
+    border-radius: 20px;
+}
+
+#button1{
+    width: 150px;
+    background-color:darkred;
+    border: 10px
+}
+
+.body-content{
+    background-color: azure
+}
+
+

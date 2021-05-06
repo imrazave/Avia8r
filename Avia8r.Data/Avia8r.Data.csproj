@@ -60,33 +60,9 @@
     <Compile Include="Aircraft.cs" />
     <Compile Include="FlightLeg.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202104200005548_migratingAvia8r.cs" />
-    <Compile Include="Migrations\202104200005548_migratingAvia8r.Designer.cs">
-      <DependentUpon>202104200005548_migratingAvia8r.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104202157526_InitialMigration.cs" />
-    <Compile Include="Migrations\202104202157526_InitialMigration.Designer.cs">
-      <DependentUpon>202104202157526_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104231328129_ChangedContext.cs" />
-    <Compile Include="Migrations\202104231328129_ChangedContext.Designer.cs">
-      <DependentUpon>202104231328129_ChangedContext.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104302059092_AcModel.cs" />
-    <Compile Include="Migrations\202104302059092_AcModel.Designer.cs">
-      <DependentUpon>202104302059092_AcModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104302116237_Amodel.cs" />
-    <Compile Include="Migrations\202104302116237_Amodel.designer.cs">
-      <DependentUpon>202104302116237_Amodel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104302118403_AcModel2.cs" />
-    <Compile Include="Migrations\202104302118403_AcModel2.designer.cs">
-      <DependentUpon>202104302118403_AcModel2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105051235491_MxEventAndFlightLegUpdate.cs" />
-    <Compile Include="Migrations\202105051235491_MxEventAndFlightLegUpdate.designer.cs">
-      <DependentUpon>202105051235491_MxEventAndFlightLegUpdate.cs</DependentUpon>
+    <Compile Include="Migrations\202105052300294_NewMigration.cs" />
+    <Compile Include="Migrations\202105052300294_NewMigration.designer.cs">
+      <DependentUpon>202105052300294_NewMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MxEvent.cs" />
@@ -97,26 +73,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104200005548_migratingAvia8r.resx">
-      <DependentUpon>202104200005548_migratingAvia8r.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104202157526_InitialMigration.resx">
-      <DependentUpon>202104202157526_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104231328129_ChangedContext.resx">
-      <DependentUpon>202104231328129_ChangedContext.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104302059092_AcModel.resx">
-      <DependentUpon>202104302059092_AcModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104302116237_Amodel.resx">
-      <DependentUpon>202104302116237_Amodel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104302118403_AcModel2.resx">
-      <DependentUpon>202104302118403_AcModel2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105051235491_MxEventAndFlightLegUpdate.resx">
-      <DependentUpon>202105051235491_MxEventAndFlightLegUpdate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105052300294_NewMigration.resx">
+      <DependentUpon>202105052300294_NewMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -47,9 +47,11 @@
                 @Html.DisplayFor(modelItem => item.Manufacturer)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.AcTail}) |
+                @Html.ActionLink("Edit", "Edit", new { id = item.AcTail }) |
                 @Html.ActionLink("Details", "Details", new { id = item.AcTail }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.AcTail })
+                @Html.ActionLink("Delete", "Delete", new { id = item.AcTail }) |
+                @Html.ActionLink("Return All Flight Legs For This Aircraft", "FlightLegs", new { id = item.AcTail }) |
+                @Html.ActionLink("Return Total Hours Out Of Service", "HoursOutOfService", new { id = item.AcTail })
             </td>
         </tr>
     }
